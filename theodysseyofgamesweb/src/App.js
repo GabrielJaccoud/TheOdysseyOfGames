@@ -1,71 +1,58 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
+import Home from './pages/Home';
+import About from './pages/About';
+import Games from './pages/Games';
+import Blog from './pages/Blog';
+import Community from './pages/Community';
+import Support from './pages/Support';
+import Shop from './pages/Shop';
+import Download from './pages/Download';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src="/logo-TheOdysseyofGames.png" className="App-logo" alt="The Odyssey of Games" />
-        <h1>The Odyssey of Games</h1>
-        <p>
-          Uma jornada épica através dos jogos clássicos das civilizações antigas
-        </p>
-        
-        <div className="features">
-          <div className="feature">
-            <h3>🎮 Jogos Clássicos</h3>
-            <p>Descubra jogos milenares de diferentes culturas</p>
-          </div>
-          <div className="feature">
-            <h3>📚 Aprenda História</h3>
-            <p>Mergulhe na rica história por trás de cada jogo</p>
-          </div>
-          <div className="feature">
-            <h3>🌍 Conecte-se</h3>
-            <p>Jogue com pessoas do mundo todo</p>
-          </div>
-        </div>
+    <Router>
+      <div className="App">
+        <header className="App-header">
+          <img src="/logo-TheOdysseyofGames.png" className="App-logo" alt="The Odyssey of Games" />
+          <h1>The Odyssey of Games</h1>
+          <p>
+            Uma jornada épica através dos jogos clássicos das civilizações antigas
+          </p>
+          <nav>
+            <ul className="nav-links">
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/about">Sobre</Link></li>
+              <li><Link to="/games">Jogos</Link></li>
+              <li><Link to="/blog">Blog</Link></li>
+              <li><Link to="/community">Comunidade</Link></li>
+              <li><Link to="/support">Suporte</Link></li>
+              <li><Link to="/shop">Loja</Link></li>
+              <li><Link to="/download">Download</Link></li>
+            </ul>
+          </nav>
+        </header>
 
-        <div className="games-grid">
-          <h2>Civilizações Disponíveis</h2>
-          <div className="civilizations">
-            <div className="civilization">
-              <h4>🏺 Egito Antigo</h4>
-              <p>Senet - O jogo dos mortos</p>
-            </div>
-            <div className="civilization">
-              <h4>🌸 Japão</h4>
-              <p>Hanafuda - Cartas florais</p>
-            </div>
-            <div className="civilization">
-              <h4>🏛️ Grécia</h4>
-              <p>Petteia - Estratégia clássica</p>
-            </div>
-            <div className="civilization">
-              <h4>🗿 Asteca</h4>
-              <p>Patolli - Jogo sagrado</p>
-            </div>
-            <div className="civilization">
-              <h4>🐘 Índia</h4>
-              <p>Chaturanga - Ancestral do xadrez</p>
-            </div>
-            <div className="civilization">
-              <h4>⚔️ Vikings</h4>
-              <p>Hnefatafl - Defesa do rei</p>
-            </div>
-          </div>
-        </div>
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/games" element={<Games />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/community" element={<Community />} />
+            <Route path="/support" element={<Support />} />
+            <Route path="/shop" element={<Shop />} />
+            <Route path="/download" element={<Download />} />
+          </Routes>
+        </main>
 
-        <div className="download-section">
-          <h2>Baixe Agora</h2>
-          <div className="download-buttons">
-            <button className="download-btn ios">📱 App Store</button>
-            <button className="download-btn android">🤖 Google Play</button>
-          </div>
-        </div>
-      </header>
-    </div>
-  );
-}
+        <footer className="App-footer">
+          <p>&copy; 2025 The Odyssey of Games. Todos os direitos reservados.</p>
+        </footer>
+      </div>
+    </Router>
+
 
 export default App;
+

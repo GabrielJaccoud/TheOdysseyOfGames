@@ -159,3 +159,46 @@ p {
     width: 100%;
   }
 }
+
+
+
+
+
+/* Novas regras para navegação e rodapé */
+nav {
+  margin-top: 20px;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #FFD700; /* Dourado */
+}
+
+main {
+  padding: 20px;
+  min-height: 400px; /* Garante que o main tenha altura mínima */
+}
+
+.App-footer {
+  background-color: #282c34;
+  color: white;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+
