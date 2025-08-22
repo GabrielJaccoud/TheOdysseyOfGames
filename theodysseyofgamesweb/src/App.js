@@ -52,7 +52,7 @@ function App() {
         </footer>
       </div>
     </Router>
-
+  );
+}
 
 export default App;
-
