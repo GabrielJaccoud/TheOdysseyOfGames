@@ -38,7 +38,10 @@ const LobbyScreen = () => {
               <Text style={styles.buttonText}>Torneios</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.button}>
+            <TouchableOpacity 
+              style={styles.button}
+              onPress={() => navigation.navigate('Profile')}
+            >
               <Text style={styles.buttonText}>Perfil</Text>
             </TouchableOpacity>
           </View>

@@ -11,6 +11,7 @@ import HanafudaGameScreen from './screens/HanafudaGameScreen';
 import NineMensMorrisGameScreen from './screens/NineMensMorrisGameScreen';
 import HnefataflGameScreen from './screens/HnefataflGameScreen';
 import PachisiGameScreen from './screens/PachisiGameScreen';
+import ProfileScreen from './screens/ProfileScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -28,6 +29,7 @@ const App = () => {
         <Stack.Screen name="NineMensMorrisGame" component={NineMensMorrisGameScreen} />
         <Stack.Screen name="HnefataflGame" component={HnefataflGameScreen} />
         <Stack.Screen name="PachisiGame" component={PachisiGameScreen} />
+        <Stack.Screen name="Profile" component={ProfileScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
