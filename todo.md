@@ -36,14 +36,14 @@
 
 ## Fase 5: Migração para Vercel e Configuração de Produçã- [x] Migrar o backend para o Vercel e configurar a produção
 ## Fase 6: Implementação dos Jogos Clássicos
-- [ ] Implementar Senet (Egito Antigo)
-- [ ] Implementar Go (Ásia)
-- [ ] Implementar Mancala (África)
+- [x] Implementar Senet (Egito Antigo)
+- [x] Implementar Go (Ásia)
+- [x] Implementar Mancala (África)
 - [ ] Implementar Chaturanga (Índia)
-- [ ] Implementar Patolli (Asteca)
-- [ ] Implementar Hanafuda (Japão)
-- [ ] Implementar Nine Men's Morris (Medieval)
-- [ ] Implementar Hnefatafl (Viking)
+- [x] Implementar Patolli (Asteca)
+- [x] Implementar Hanafuda (Japão)
+- [x] Implementar Nine Men's Morris (Medieval)
+- [x] Implementar Hnefatafl (Viking)
 - [ ] Implementar Pachisi (Índia)
 - [ ] Implementar Royal Game of Ur (Mesopotâmia)
 
