@@ -1,204 +1,418 @@
-.App {
-  text-align: center;
-  font-family: Arial, sans-serif;
-  background-color: #f0f2f5;
-  color: #333;
+/* Reset e configurações globais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f8f9fa;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header moderno */
 .App-header {
-  background-color: #282c34;
-  padding: 40px 20px;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  padding: 2rem 1rem;
   color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  position: relative;
+  overflow: hidden;
+}
+
+.App-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(255,215,0,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  opacity: 0.3;
+  pointer-events: none;
 }
 
 .App-logo {
-  height: 150px;
-  pointer-events: none;
-  margin-bottom: 20px;
+  height: 120px;
+  width: auto;
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+  transition: transform 0.3s ease;
 }
 
-h1 {
-  color: #FFD700; /* Dourado */
-  margin-bottom: 10px;
+.App-logo:hover {
+  transform: scale(1.05) rotate(2deg);
 }
 
-p {
-  font-size: 1.2em;
-  max-width: 800px;
-  line-height: 1.5;
-}
-
-.features {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  max-width: 900px;
-  margin: 40px 0;
-  flex-wrap: wrap;
-}
-
-.feature {
-  background-color: #fff;
-  color: #333;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin: 15px;
-  flex: 1;
-  min-width: 280px;
-  max-width: 30%;
-  transition: transform 0.3s ease-in-out;
-}
-
-.feature:hover {
-  transform: translateY(-5px);
-}
-
-.feature h3 {
-  color: #0066CC; /* Azul Egípcio */
-  margin-bottom: 10px;
-}
-
-.games-grid {
-  background-color: #e0e0e0;
-  padding: 40px 20px;
-  width: 100%;
-}
-
-.games-grid h2 {
-  color: #282c34;
-  margin-bottom: 30px;
-}
-
-.civilizations {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.civilization {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 15px;
-  margin: 10px;
-  width: 180px;
-  text-align: left;
-}
-
-.civilization h4 {
+.App-header h1 {
   color: #FFD700;
-  margin-bottom: 5px;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  letter-spacing: -0.02em;
 }
 
-.download-section {
-  background-color: #282c34;
-  padding: 40px 20px;
-  color: white;
+.App-header p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  text-align: center;
 }
 
-.download-section h2 {
-  color: #FFD700;
-  margin-bottom: 30px;
-}
-
-.download-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.download-btn {
-  background-color: #0066CC; /* Azul Egípcio */
-  color: white;
-  border: none;
-  padding: 15px 30px;
-  border-radius: 5px;
-  font-size: 1.1em;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.download-btn.ios {
-  background-color: #555;
-}
-
-.download-btn.android {
-  background-color: #76B900; /* Um verde para Android */
-}
-
-.download-btn:hover {
-  background-color: #0056b3;
-}
-
-.download-btn.ios:hover {
-  background-color: #444;
-}
-
-.download-btn.android:hover {
-  background-color: #6aa700;
-}
-
-@media (max-width: 768px) {
-  .features {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .feature {
-    max-width: 90%;
-  }
-
-  .civilization {
-    width: 100%;
-  }
-}
-
-
-
-
-
-/* Novas regras para navegação e rodapé */
+/* Navegação moderna */
 nav {
-  margin-top: 20px;
+  margin-top: 1.5rem;
+  z-index: 1;
 }
 
 .nav-links {
   list-style: none;
-  padding: 0;
   display: flex;
-  gap: 20px;
+  gap: 0.5rem;
   flex-wrap: wrap;
   justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 50px;
+  padding: 0.5rem;
+}
+
+.nav-links li {
+  margin: 0;
 }
 
 .nav-links li a {
   color: white;
   text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease;
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-links li a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.nav-links li a:hover::before {
+  left: 100%;
 }
 
 .nav-links li a:hover {
-  color: #FFD700; /* Dourado */
+  color: #FFD700;
+  background: rgba(255, 215, 0, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
 }
 
+/* Main content */
 main {
-  padding: 20px;
-  min-height: 400px; /* Garante que o main tenha altura mínima */
+  flex: 1;
+  padding: 0;
+  min-height: 400px;
 }
 
-.App-footer {
-  background-color: #282c34;
+/* Features section melhorada */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.feature::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #FFD700, #FFA500);
+}
+
+.feature:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.feature h3 {
+  color: #1a1a2e;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.feature p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Games grid melhorada */
+.games-grid {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 4rem 2rem;
+}
+
+.games-grid h2 {
+  color: #1a1a2e;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+.civilizations {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.civilization {
+  background: white;
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border-left: 4px solid #FFD700;
+}
+
+.civilization:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.civilization h4 {
+  color: #FFD700;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.civilization p {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* Download section melhorada */
+.download-section {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  padding: 4rem 2rem;
   color: white;
-  padding: 20px;
-  margin-top: 40px;
+  text-align: center;
 }
 
+.download-section h2 {
+  color: #FFD700;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.download-section p {
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  opacity: 0.9;
+}
+
+.download-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.download-btn {
+  background: linear-gradient(45deg, #FFD700, #FFA500);
+  color: #1a1a2e;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  min-width: 200px;
+}
+
+.download-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.download-btn:hover::before {
+  left: 100%;
+}
+
+.download-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(255, 215, 0, 0.4);
+}
+
+.download-btn.ios {
+  background: linear-gradient(45deg, #555, #777);
+  color: white;
+}
+
+.download-btn.android {
+  background: linear-gradient(45deg, #76B900, #9ACD32);
+  color: white;
+}
+
+/* Footer moderno */
+.App-footer {
+  background: #1a1a2e;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  border-top: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.App-footer p {
+  margin: 0;
+  opacity: 0.8;
+}
+
+/* Responsividade melhorada */
+@media (max-width: 768px) {
+  .App-header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .App-header p {
+    font-size: 1rem;
+  }
+  
+  .nav-links {
+    gap: 0.25rem;
+    padding: 0.25rem;
+  }
+  
+  .nav-links li a {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .features {
+    grid-template-columns: 1fr;
+    padding: 2rem 1rem;
+  }
+  
+  .civilizations {
+    grid-template-columns: 1fr;
+  }
+  
+  .download-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .download-btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .App-header {
+    padding: 1.5rem 1rem;
+  }
+  
+  .App-header h1 {
+    font-size: 2rem;
+  }
+  
+  .nav-links {
+    flex-direction: column;
+    gap: 0.5rem;
+    background: none;
+    padding: 0;
+  }
+  
+  .nav-links li a {
+    background: rgba(255, 255, 255, 0.1);
+    margin: 0.25rem 0;
+  }
+}
+
+/* Animações de scroll */
+@media (prefers-reduced-motion: no-preference) {
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .animate-on-scroll.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Melhorias de acessibilidade */
+.download-btn:focus,
+.nav-links li a:focus {
+  outline: 2px solid #FFD700;
+  outline-offset: 2px;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Seleção de texto personalizada */
+::selection {
+  background: rgba(255, 215, 0, 0.3);
+  color: #1a1a2e;
+}
+
+::-moz-selection {
+  background: rgba(255, 215, 0, 0.3);
+  color: #1a1a2e;
+}
 
