@@ -34,8 +34,18 @@ const LobbyScreen = () => {
               <Text style={styles.buttonText}>Modo Aventura</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.button}>
-              <Text style={styles.buttonText}>Torneios</Text>
+            <TouchableOpacity 
+              style={styles.button}
+              onPress={() => navigation.navigate('Leaderboard')}
+            >
+              <Text style={styles.buttonText}>🏆 Rankings</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity 
+              style={styles.button}
+              onPress={() => navigation.navigate('Tournaments')}
+            >
+              <Text style={styles.buttonText}>🏆 Torneios</Text>
             </TouchableOpacity>
 
             <TouchableOpacity 
